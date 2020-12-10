@@ -11,11 +11,15 @@ try:
 except ModuleNotFoundError:
     sys.exit("Required modules were not found.")
 
-env_path = Path('./config/')/'.env'
+try:
+    env_path = Path('./config2/')/'.env'
+except:
+    env_path = Path('./config/')/'.env'
 
 load_dotenv(dotenv_path=env_path)
 email = os.getenv('EMAIL')
 password = os.getenv('PASSWORD')
+print(email, password)
 
 
 class Zodiac:
