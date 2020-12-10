@@ -14,6 +14,7 @@ premailer==3.7.0
 pycodestyle==2.6.0
 python-dotenv==0.15.0
 requests==2.25.0
+schedule==0.6.0
 six==1.15.0
 soupsieve==2.0.1
 toml==0.10.2
