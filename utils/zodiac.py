@@ -11,12 +11,13 @@ try:
 except ModuleNotFoundError:
     sys.exit("Required modules were not found.")
 
-try:
-    env_path = Path('./config2/')/'.env'
-except:
+if os.path.exists('config'):
     env_path = Path('./config/')/'.env'
+    load_dotenv(dotenv_path=env_path)
+elif os.path.exists('config2'):
+    env_path = Path('./config2/')/'.env'
+    load_dotenv(dotenv_path=env_path)
 
-load_dotenv(dotenv_path=env_path)
 email = os.getenv('EMAIL')
 password = os.getenv('PASSWORD')
 print(email, password)
